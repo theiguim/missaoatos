@@ -1,0 +1,527 @@
+@charset "UTF-8";
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a,
+li {
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+nav {
+    background-color: black;
+    width: 100vw;
+    position: fixed;
+    z-index: 1;
+}
+
+ul a:hover{
+    border-bottom: 3px solid rgba(255, 255, 255, 0.466);
+}
+#logo {
+    width: 70px;
+}
+
+#responsive {
+    position: absolute;
+    display: block;
+    background: white;
+    width: 30px;
+    height: 2px;
+    top: 35px;
+    right: 5px;
+    transition: 0.5s ease-in-out;
+    margin: 0 20px;
+
+}
+
+#responsive::after,
+#responsive::before {
+    background: white;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+}
+
+#responsive:before {
+    top: -10px;
+}
+
+#responsive::after {
+    bottom: -10px;
+}
+
+#ul {
+    display: none;
+    padding-bottom: 10px;
+}
+
+ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+#mainPag {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#mainPag video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#about {
+    width: 100vw;
+    height: 100vh;
+}
+
+.sessao {
+    width: 100vw;
+    height: 160vh;
+    background-color: black;
+    overflow: hidden;
+}
+
+.img_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40%;
+    position: relative;
+}
+
+.img_section {
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transform: translateZ(0);
+}
+
+/* caso height seja 200vh seguir ordem 15, 35, 55% | caso height tiver imagem reduzida 160vh sendo 60% texto 40%imagem */
+#imgS1 {
+    top: -25%;
+}
+
+#imgS2 {
+    top: -45%;
+}
+
+#imgS3 {
+    top: -65%;
+}
+
+.txt_out {
+    height: 60%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.txt_inside {
+    max-width: 350px;
+}
+
+h1 {
+    font-size: 30px;
+    padding-bottom: 50px;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+#doe {
+    width: 100vw;
+    height: 70px;
+    background-color: rgb(53, 53, 228);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: pix 3s ease-in infinite;
+}
+
+#doe p {
+    font-size: 12px;
+    color: rgb(207, 207, 207);
+}
+
+#contato {
+    height: 300px;
+    width: 100%;
+    background-color: rgb(22, 22, 22);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    align-items: start;
+}
+
+#endereco,
+#social {
+    max-width: 100px;
+    font-size: 12px;
+}
+
+#contato h2 {
+    margin-bottom: 20px;
+}
+
+.socials-icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.social-logo {
+    width: 20px;
+    height: 20px;
+}
+
+footer {
+    background-color: rgb(19, 19, 19);
+    color: rgb(207, 207, 207);
+    font-size: 10px;
+    text-align: center;
+    padding: 8px;
+}
+
+@keyframes pix {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1, 1.10);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+
+@media screen and (orientation:landscape) {
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #ul {
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+
+    #responsive {
+        display: none;
+    }
+
+    #about {
+        height: 100vh;
+    }
+
+    .sessao {
+        height: 200vh;
+        width: 100vw;
+    }
+
+    .img_content {
+        height: 40%;
+    }
+
+    .img_section {
+        width: 100%;
+    }
+
+    .txt_out {
+        height: 60%;
+        
+    }
+
+    .txt_inside {
+        max-width: 650px;
+    }
+}
+
+@media screen and (min-width: 768px) and (orientation: portrait) {
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #ul {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        font-size: 20px;
+    }
+
+    #responsive {
+        display: none;
+    }
+
+    #about {
+        height: 100vh;
+    }
+
+    .sessao {
+        height: 200vh;
+        width: 100vw;
+    }
+
+    .img_content {
+        height: 40%;
+    }
+
+    .img_section {
+        width: 100%;
+    }
+
+    .txt_out {
+        height: 60%;
+    }
+
+    .txt_inside {
+        max-width: 500px;
+    }
+
+    h1 {
+        font-size: 40px;
+        padding-bottom: 80px;
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 1.8em;
+    }
+
+    #endereco,
+    #social {
+        max-width: 200px;
+        font-size: 17px;
+    }
+
+    #doe {
+        font-size: 20px;
+    }
+
+    #doe p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #ul {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        font-size: 23px;
+    }
+
+    #responsive {
+        display: none;
+    }
+
+    #about {
+        height: 100vh;
+    }
+
+    .sessao {
+        height: 200vh;
+        width: 100vw;
+    }
+
+    .img_content {
+        height: 40%;
+    }
+
+    .img_section {
+        width: 100%;
+    }
+
+    .txt_out {
+        height: 60%;
+    }
+
+    .txt_inside {
+        max-width: 600px;
+    }
+
+    h1 {
+        font-size: 50px;
+        padding-bottom: 100px;
+    }
+
+    p {
+        font-size: 27px;
+        line-height: 1.8em;
+    }
+
+    #endereco,
+    #social {
+        max-width: 300px;
+        font-size: 20px;
+
+    }
+
+    #contato p {
+        font-size: 22px;
+    }
+
+    #doe {
+        font-size: 25px;
+    }
+
+    #doe p {
+        font-size: 17px;
+    }
+
+    .social-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    footer {
+        font-size: 15px;
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    #ul {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        font-size: 17px;
+    }
+
+    #about {
+        height: 80vh;
+    }
+
+    .sessao {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+    }
+
+    .img_content {
+        height: 100%;
+        width: 50%;
+    }
+
+    #imgS1 {
+        top: -18%;
+    }
+
+    #imgS2 {
+        top: -28%;
+    }
+
+    #imgS3 {
+        top: -38%;
+    }
+
+    .txt_out {
+        height: 100%;
+        width: 50%;
+        justify-content: right;
+        padding: 0 100px;
+    }
+
+    .txt_inside {
+        max-width: 450px;
+    }
+
+    .inverted_sessao {
+        flex-direction: row-reverse;
+    }
+
+    .inverted_txt_out {
+        justify-content: left;
+    }
+    h1 {
+        font-size: 35px;
+        padding-bottom: 80px;
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 1.8em;
+    }
+
+    #doe {
+        font-size: 20px;
+    }
+
+    #doe p {
+        font-size: 13px;
+    }
+    #contato{
+        height: 250px;
+    }
+
+    #endereco,
+    #social {
+        max-width: 300px;
+        font-size: 15px;
+
+    }
+
+    #contato p {
+        font-size: 13px;
+    }
+
+    .social-logo {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer {
+        font-size: 10px;
+        padding: 10px;
+    }
+
+
+
+
+
+
+}
+
+/* FALTA EDITAR RESPONSIVIDADE DAS FONTES DO SE 375 WIDTH EM PÉ E DEITADO */
