@@ -6,6 +6,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+html {
+    -webkit-text-size-adjust: 100%; /* Impedir o dimensionamento da fonte em paisagem e permitir o zoom do usuário */
+}
 
 a,
 li {
@@ -225,9 +228,19 @@ footer {
     }
 }
 
+@media screen and (max-width: 390px) and (orientation:portrait), screen and (max-width:670px) and (orientation:landscape){
+    .txt_inside {
+        font-size: 15px;
+    }
 
-@media screen and (orientation:landscape) {
+}
 
+@media screen and (orientation: landscape) {
+
+    body{
+        background-color: black;
+    }
+   
     nav {
         display: flex;
         justify-content: space-around;
@@ -245,15 +258,18 @@ footer {
 
     #about {
         height: 100vh;
+        background-color: white;
+        background-color: red;
     }
 
     .sessao {
         height: 200vh;
         width: 100vw;
+    
     }
 
     .img_content {
-        height: 40%;
+        height: 50%;
     }
 
     .img_section {
@@ -262,12 +278,13 @@ footer {
 
     .txt_out {
         height: 60%;
-        
     }
 
     .txt_inside {
-        max-width: 650px;
+        max-width:650px;
     }
+
+
 }
 
 @media screen and (min-width: 768px) and (orientation: portrait) {
@@ -523,5 +540,3 @@ footer {
 
 
 }
-
-/* FALTA EDITAR RESPONSIVIDADE DAS FONTES DO SE 375 WIDTH EM PÉ E DEITADO */

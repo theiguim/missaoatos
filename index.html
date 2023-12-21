@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no viewport-fit=cover">
     <link rel="stylesheet" href="style.css">
     <title>Missão Atos</title>
 </head>
@@ -12,14 +12,14 @@
 
     <header>
         <nav>
-            <a href="#mainPag"><img id='logo' src="images/logo.png" alt="logo missao atos"></a> 
+            <a href="#mainPag"><img id='logo' src="images/logo.png" alt="logo missao atos"></a>
             <div id="responsive"></div>
             <ul id="ul">
                 <li><a href="#mainPag">Home</a></li>
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#igrejas">Igrejas</a></li>
                 <li><a href="#departamentos">Departamentos</a></li>
-                <li><a href="#asa">ASA</a></li>
+                <li><a href="#asa">ASAs</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -38,7 +38,7 @@
                     dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
                     mollit anim id est laborum."</p>
-                    <br>
+                <br>
                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
@@ -78,7 +78,7 @@
 
         <div class="txt_out">
             <div class="txt_inside">
-                <h1>ASA</h1>
+                <h1>ASAs</h1>
                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
@@ -131,54 +131,9 @@
 
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            const responsive = document.getElementById('responsive')
-            const ul = document.getElementById('ul')
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth >= 600) {
-                    ul.style.display = 'flex'
-                } else {
-                    ul.style.display = 'none'
-                }
-            })
-
-            responsive.addEventListener('click', () => {
-
-                if (ul.style.display == 'block') {
-                    ul.style.display = 'none'
-                } else {
-                    ul.style.display = 'block'
-                }
-            })
-
-            if(responsive.style.display == 'block'){
-                ul.addEventListener('click', (e) => {
-                if (e.target) {
-                    ul.style.display = 'none'
-                }
-            })
-            }
-
-          
-
-            const imgSections = document.querySelectorAll('.img_section');
-
-            window.addEventListener('scroll', () => {
-                imgSections.forEach((imgSection) => {
-                    const rect = imgSection.getBoundingClientRect();
-                    const translateY = window.scrollY - rect.top;
-                    imgSection.style.transform = `translateY(${translateY * 0.1}px)`;
-                });
-            });
-        })
-
-
-
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
+
+<!-- possibilidade de fazer um menu antes do footer abordando dúvidas gerais -->
