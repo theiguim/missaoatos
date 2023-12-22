@@ -39,5 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
             imgSection.style.transform = `translateY(${translateY * 0.1}px)`;
         });
     });
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+    
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 })
 
