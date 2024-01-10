@@ -6,8 +6,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 html {
-    -webkit-text-size-adjust: 100%; /* Impedir o dimensionamento da fonte em paisagem e permitir o zoom do usuário */
+    -webkit-text-size-adjust: 100%;
+    /* Impedir o dimensionamento da fonte em paisagem e permitir o zoom do usuário */
 }
 
 a,
@@ -23,18 +25,47 @@ body {
     font-family: sans-serif;
 }
 
+header {
+    position: relative;
+    z-index: 5;
+}
+
 nav {
     background-color: black;
     width: 100vw;
+    min-height: 74px;   /* CUIDADO AQUIOOOOOO !!!!!!!!!!!!!!!!*/
     position: fixed;
-    z-index: 1;
+    z-index: 5;
 }
 
-ul a:hover{
-    border-bottom: 3px solid rgba(255, 255, 255, 0.466);
+#jornal {
+    display: none;
+    position: absolute;
+    top: 74px;
+    padding: 8px;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.514);
+    text-align: center;
+    font-size: 10px;
+
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
+
+#jornal.invisivel {
+    opacity: 0;
+    visibility: hidden;
+}
+
+ul a:hover {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.466);
+    color: white;
+}
+
 #logo {
-    width: 70px;
+    height: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
 }
 
 #responsive {
@@ -71,7 +102,9 @@ ul a:hover{
 
 #ul {
     display: none;
+    padding-top: 20px;
     padding-bottom: 10px;
+    margin: 0;
 }
 
 ul li a {
@@ -80,6 +113,7 @@ ul li a {
     text-decoration: none;
     text-align: center;
     color: white;
+    
 }
 
 #mainPag {
@@ -96,7 +130,10 @@ ul li a {
 
 #about {
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .sessao {
@@ -136,7 +173,6 @@ ul li a {
 
 .txt_out {
     height: 60%;
-    background-color: black;
     color: white;
     display: flex;
     justify-content: center;
@@ -154,6 +190,18 @@ h1 {
 
 p {
     line-height: 1.5em;
+}
+.btn_nv{
+   margin: 50px 0;
+   height: 30px;
+   width: 125px;
+   padding: 20px;
+   display: flex;
+   align-items: center;
+   border: white 1px solid;
+   background-color: black;
+   color: white;
+ 
 }
 
 #doe {
@@ -214,6 +262,51 @@ footer {
     padding: 8px;
 }
 
+/* AQUI IRÁ A ESTILIZAÇÃO DAS PÁGINAS DE NAVEGAÇÃO */
+#capa_nav {
+    height: 40vh;
+    background-image: url(images/s1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.depart {
+    background-color: white;
+    height: 80vh;
+    width: 100vw;
+}
+
+.depart_txtAll {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.depart_txt {
+    padding: 20px;
+}
+
+.depart_imgAll {
+    width: 100%;
+    height: 40%;
+    }
+    
+    .carousel,
+    .carousel-inner,
+    .carousel-item{
+    width: 100%;
+    height: 100%;
+    }
+    
+    .carousel-item img{
+        object-fit: cover;
+    }
+    
+
+
+
+
 @keyframes pix {
     0% {
         transform: scale(1, 1);
@@ -228,19 +321,36 @@ footer {
     }
 }
 
-@media screen and (max-width: 390px) and (orientation:portrait), screen and (max-width:670px) and (orientation:landscape){
+@media screen and (max-width: 390px) and (orientation:portrait),
+screen and (max-width:670px) and (orientation:landscape) {
     .txt_inside {
         font-size: 15px;
     }
+
+
+    /* AQUI IRÁ A ESTILIZAÇÃO DAS PÁGINAS DE NAVEGAÇÃO */
+    .depart {
+        height: 100vh;
+    }
+
+    .depart_txtAll {
+        height: 60%;
+    }
+
+    .carousel {
+        height: 40%;
+    }
+
+
 
 }
 
 @media screen and (orientation: landscape) {
 
-    body{
+    body {
         background-color: black;
     }
-   
+
     nav {
         display: flex;
         justify-content: space-around;
@@ -264,7 +374,7 @@ footer {
     .sessao {
         height: 200vh;
         width: 100vw;
-    
+
     }
 
     .img_content {
@@ -280,8 +390,61 @@ footer {
     }
 
     .txt_inside {
-        max-width:650px;
+        max-width: 650px;
     }
+
+    /* AQUI IRÁ A ESTILIZAÇÃO DAS PÁGINAS DE NAVEGAÇÃO */
+#capa_nav {
+    height: 100vh;
+    background-image: url(images/s1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+
+.depart {
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.depart_txtAll {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.depart_txt {
+    padding: 20px;
+}
+
+.depart_imgAll {
+width: 50%;
+height: 100%;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-item{
+width: 100%;
+height: 100%;
+}
+
+.carousel-item img{
+    object-fit: cover;
+}
+
+.inverted_sessao {
+    flex-direction: row-reverse;
+}
+
+.inverted_txt_out {
+    justify-content: left;
+}
+
+
 
 
 }
@@ -297,7 +460,15 @@ footer {
         display: flex;
         align-items: center;
         padding: 0;
-        font-size: 20px;
+        font-size: 17px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #jornal {
+        display: block;
     }
 
     #responsive {
@@ -365,7 +536,15 @@ footer {
         display: flex;
         align-items: center;
         padding: 0;
-        font-size: 23px;
+        font-size: 17px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #jornal {
+        display: block;
     }
 
     #responsive {
@@ -437,7 +616,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) and (max-width: 1370px) {
 
     #ul {
         display: flex;
@@ -491,13 +670,14 @@ footer {
     .inverted_txt_out {
         justify-content: left;
     }
+
     h1 {
-        font-size: 35px;
-        padding-bottom: 80px;
+        font-size: 30px;
+        padding-bottom: 50px;
     }
 
     p {
-        font-size: 17px;
+        font-size: 15px;
         line-height: 1.8em;
     }
 
@@ -508,7 +688,8 @@ footer {
     #doe p {
         font-size: 13px;
     }
-    #contato{
+
+    #contato {
         height: 250px;
     }
 
@@ -533,9 +714,213 @@ footer {
         padding: 10px;
     }
 
+       /* AQUI IRÁ A ESTILIZAÇÃO DAS PÁGINAS DE NAVEGAÇÃO */
 
-
-
-
+    #capa_nav {
+        height: 80vh;
+        background-image: url(images/s1.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    
+    
+    .depart {
+        background-color: white;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+    }
+    
+    .depart_txtAll {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        padding: 0 100px;
+    }
+    
+    .depart_txt {
+        max-width: 450px;
+    }
+    
+    .depart_imgAll {
+    width: 50%;
+    height: 100%;
+    }
+    
+    .carousel,
+    .carousel-inner,
+    .carousel-item{
+    width: 100%;
+    height: 100%;
+    }
+    
+    .carousel-item img{
+        object-fit: cover;
+    }
+    
+    .inverted_sessao {
+        flex-direction: row-reverse;
+    }
+    
+    .inverted_txt_out {
+        justify-content: left;
+    }
 
 }
+
+@media screen and (min-width: 1371px) {
+
+    #ul {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        font-size: 17px;
+    }
+
+    #about {
+        height: 80vh;
+    }
+
+    .sessao {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+    }
+
+    .img_content {
+        height: 100%;
+        width: 50%;
+    }
+
+    #imgS1 {
+        top: -18%;
+    }
+
+    #imgS2 {
+        top: -28%;
+    }
+
+    #imgS3 {
+        top: -38%;
+    }
+
+    .txt_out {
+        height: 100%;
+        width: 50%;
+        justify-content: right;
+        padding: 0 100px;
+    }
+
+    .txt_inside {
+        max-width: 450px;
+    }
+
+    .inverted_sessao {
+        flex-direction: row-reverse;
+    }
+
+    .inverted_txt_out {
+        justify-content: left;
+    }
+
+    h1 {
+        font-size: 35px;
+        padding-bottom: 80px;
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 1.8em;
+    }
+
+    #doe {
+        font-size: 20px;
+    }
+
+    #doe p {
+        font-size: 13px;
+    }
+
+    #contato {
+        height: 250px;
+    }
+
+    #endereco,
+    #social {
+        max-width: 300px;
+        font-size: 15px;
+
+    }
+
+    #contato p {
+        font-size: 13px;
+    }
+
+    .social-logo {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer {
+        font-size: 10px;
+        padding: 10px;
+    }
+
+     /* AQUI IRÁ A ESTILIZAÇÃO DAS PÁGINAS DE NAVEGAÇÃO */
+
+     #capa_nav {
+        height: 80vh;
+        background-image: url(images/s1.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    
+    
+    .depart {
+        background-color: white;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+    }
+    
+    .depart_txtAll {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        padding: 0 100px;
+    }
+    
+    .depart_txt {
+        max-width: 450px;
+    }
+    
+    .depart_imgAll {
+    width: 50%;
+    height: 100%;
+    }
+    
+    .carousel,
+    .carousel-inner,
+    .carousel-item{
+    width: 100%;
+    height: 100%;
+    }
+    
+    .carousel-item img{
+        object-fit: cover;
+    }
+    
+    .inverted_sessao {
+        flex-direction: row-reverse;
+    }
+    
+    .inverted_txt_out {
+        justify-content: left;
+    }
+
+} 
+

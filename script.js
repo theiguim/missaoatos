@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-
     const imgSections = document.querySelectorAll('.img_section');
 
     window.addEventListener('scroll', () => {
@@ -39,16 +38,30 @@ document.addEventListener('DOMContentLoaded', () => {
             imgSection.style.transform = `translateY(${translateY * 0.1}px)`;
         });
     });
-
-
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-    
+
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
         });
     });
+
+
+    const jornal = document.getElementById('jornal')
+    window.addEventListener('scroll', () => {
+        const scrollAmount = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      if (scrollAmount >= viewportHeight) {
+        jornal.classList.add('invisivel');
+      } else {
+        jornal.classList.remove('invisivel');
+      }
+    })
+
+
+
 })
 
