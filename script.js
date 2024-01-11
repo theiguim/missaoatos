@@ -61,7 +61,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
 
+const capa_nav = document.getElementById('capa_nav')
+let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const opacity = 1 - (scrollTop / viewportHeight);
+      capa_nav.style.opacity = opacity.toFixed(2);
+    
+    });
 
 
 })
+
 
